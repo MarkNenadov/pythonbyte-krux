@@ -6,6 +6,6 @@ fun utf8Url(value: String): String? {
     return URLEncoder.encode(value, "UTF-8")
 }
 
-fun mapToUrlParameterString(parameterMap: AbstractMap<String, String>) : String {
+fun mapToUrlParameterString(parameterMap: Map<String, String>) : String {
     return parameterMap.keys.map { parameterName -> parameterName + "=" + parameterMap.get(parameterName)}.joinToString( separator = "&" )
 }
