@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 class PropertyReaderTest {
     @Test
     fun testTest() {
-        val propertyReader = PropertyReader("test.properties")
+        val propertyReader = PropertyReader("/test.properties")
         assertEquals("mark", propertyReader.get("name"))
     }
 }
