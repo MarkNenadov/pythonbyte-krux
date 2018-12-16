@@ -1,12 +1,19 @@
 package org.pythonbyte.krux.properties
 
+import java.lang.NullPointerException
 import java.util.Properties
 
-class PropertyReader(val propertiesFile : String) {
+class PropertyReader(val propertiesFilePath : String) {
     val properties = Properties()
 
     init {
-        properties.load(PropertyReader::class.java.getResourceAsStream(propertiesFile))
+        try {
+            val propertiesFile = PropertyReader::class.java.getResourceAsStream(propertiesFilePath)
+
+            properties.load(propertiesFile)
+        } catch( e : NullPointerException ) {
+            throw PropertyReaderFileNotFoundException( propertiesFilePath );
+        }
     }
 
     fun get(propertyName: String): String {
