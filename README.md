@@ -16,6 +16,9 @@ properties
 mapping
 * GpsCoordinates (class)
 
+crypto
+* HashUtils (class)
+
 url
 * encoders (file)
     * utf8Url (function)
