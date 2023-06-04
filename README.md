@@ -24,3 +24,8 @@ url
 * encoders (file)
     * utf8Url (function)
     * mapTpUrlParameterString (function)
+
+http
+* http (file)
+  * sendRequest (function)
+  * 
