@@ -29,4 +29,5 @@ url
 http
 * http (file)
   * buildRequest (function)
+  * sendRequest (function)
   * createPostBody (function)
