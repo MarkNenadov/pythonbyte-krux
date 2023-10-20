@@ -1,12 +1,11 @@
 # pythonbyte-krux
 Core library for Kotlin development.
 
-### Releases ###
+### Recent Releases ###
 
-* v0.1 - [https://github.com/MarkNenadov/pythonbyte-krux/releases/download/0.1/pythonbyte-krux.jar] - December 16, 2018
-* v0.3 - [https://github.com/MarkNenadov/pythonbyte-krux/releases/download/v0.3/pythonbyte-krux.jar] - October 23, 2020
 * v0.4 - [https://github.com/MarkNenadov/pythonbyte-krux/releases/download/v0.4/pythonbyte-krux.jar] - June 4, 2023
 * v0.5 - [https://github.com/MarkNenadov/pythonbyte-krux/releases/download/v0.5/pythonbyte-krux.jar] - October 20, 2023
+* v0.6 - [https://github.com/MarkNenadov/pythonbyte-krux/releases/download/v0.6/pythonbyte-krux.jar] - October 20, 2023
 
 ### Key Classes/Files
 
@@ -28,6 +27,7 @@ url
     * mapTpUrlParameterString (function)
 
 http
+* HttpResponse (wrapper class)
 * http (file)
   * buildRequest (function)
   * sendRequest (function)
