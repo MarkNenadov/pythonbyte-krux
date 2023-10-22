@@ -15,16 +15,21 @@ class JsonObject(val wrappedJSONObject: JSONObject) {
     }
 
     fun getArray(key: String): List<JsonObject> {
-        val jsonObjectArray: MutableList<JsonObject> = mutableListOf()
+        return if (hasKey(key)) {
+            wrappedJSONObject.getJSONArray(key).map { JsonObject(it as JSONObject) }
+        } else {
+            emptyList()
+        }
+    }
 
+    fun getStringArray(key: String): List<String> {
         if ( hasKey(key)) {
-            for(arrayItem in wrappedJSONObject.getJSONArray(key)) {
-                jsonObjectArray.add(JsonObject(arrayItem as JSONObject))
-            }
+            return wrappedJSONObject.getJSONArray(key).map { it.toString() }
         }
 
-        return jsonObjectArray
+        return listOf()
     }
+
 
     fun isNull(key: String): Boolean {
         return wrappedJSONObject.isNull(key)
