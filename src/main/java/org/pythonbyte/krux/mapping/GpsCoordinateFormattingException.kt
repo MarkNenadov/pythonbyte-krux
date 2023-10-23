@@ -1,4 +1,3 @@
 package org.pythonbyte.krux.mapping
 
-class GpsCoordinateFormattingException(message: String) : Exception( message ) {
-}
+class GpsCoordinateFormattingException(message: String) : Exception( message )

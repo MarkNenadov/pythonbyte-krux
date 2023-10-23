@@ -11,7 +11,7 @@ class HashUtils {
         }
 
         private fun getSha1Digest(value: String): ByteArray {
-            return MessageDigest.getInstance("SHA-1").digest()
+            return MessageDigest.getInstance("SHA-1").digest( value.toByteArray())
         }
     }
 }

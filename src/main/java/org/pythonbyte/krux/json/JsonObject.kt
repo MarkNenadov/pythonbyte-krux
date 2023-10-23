@@ -5,7 +5,7 @@ import org.json.JSONObject
 class JsonObject(val wrappedJSONObject: JSONObject) {
     fun getString(key: String): String {
         if ( isNull( key ) ) {
-            return "";
+            return ""
         }
         return wrappedJSONObject.getString(key)
     }
