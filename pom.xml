@@ -6,7 +6,7 @@
 
     <groupId>org.pythonbyte.krux</groupId>
     <artifactId>pythonbyte-krux</artifactId>
-    <version>0.7</version>
+    <version>0.8</version>
     <packaging>jar</packaging>
 
     <name>pythonbyte-krux</name>

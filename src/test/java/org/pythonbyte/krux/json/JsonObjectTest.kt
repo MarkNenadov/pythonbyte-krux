@@ -41,4 +41,16 @@ class JsonObjectTest {
         assertTrue( result.contains("mark") )
         assertTrue( result.contains("bob") )
     }
+
+    @Test
+    fun testGetKeys() {
+        val jsonObject = JsonObject( JSONObject( "{\"age\":33, \"weight\":155}" ))
+
+        val result = jsonObject.getKeys()
+
+        assertEquals(2, result.size)
+        assertTrue( result.contains("age") )
+        assertTrue( result.contains("weight") )
+    }
+
 }

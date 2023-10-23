@@ -50,4 +50,8 @@ class JsonObject(val wrappedJSONObject: JSONObject) {
     fun getBoolean(key: String): Boolean {
         return wrappedJSONObject.getBoolean(key)
     }
+
+    fun getKeys(): List<String> {
+        return wrappedJSONObject.keys().asSequence().toList()
+    }
 }
