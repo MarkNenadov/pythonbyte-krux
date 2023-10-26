@@ -6,7 +6,7 @@ class GpsCoordinates(longitudeLatitude: String?) {
 
     init {
         val cleanedValue = cleanSpaces(longitudeLatitude!!)
-        if ( cleanedValue.contains(",") ) {
+        if (cleanedValue.contains(",")) {
             val splitValues = cleanedValue.split(",")
 
             if ( splitValues.size != 1 ) {

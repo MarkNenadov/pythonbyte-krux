@@ -6,21 +6,21 @@
 
     <groupId>org.pythonbyte.krux</groupId>
     <artifactId>pythonbyte-krux</artifactId>
-    <version>0.8</version>
+    <version>0.9</version>
     <packaging>jar</packaging>
 
     <name>pythonbyte-krux</name>
     <description>Core libraries for Kotlin development.</description>
 
     <properties>
-        <kotlin.version>1.6.0</kotlin.version>
+        <kotlin.version>1.9.20-RC2</kotlin.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20230227</version>
+            <version>20231013</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
@@ -30,7 +30,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.6.2</version>
+            <version>5.10.0</version>
             <scope>test</scope>
         </dependency>
 

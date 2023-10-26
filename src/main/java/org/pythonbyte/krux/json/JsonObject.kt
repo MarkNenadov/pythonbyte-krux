@@ -1,6 +1,7 @@
 package org.pythonbyte.krux.json
 
 import org.json.JSONObject
+import java.math.BigDecimal
 
 class JsonObject(val wrappedJSONObject: JSONObject) {
     fun getString(key: String): String {
@@ -12,6 +13,10 @@ class JsonObject(val wrappedJSONObject: JSONObject) {
 
     fun getInt(key: String): Int {
         return wrappedJSONObject.getInt(key)
+    }
+
+    fun getBigDecimal(key: String): BigDecimal {
+        return wrappedJSONObject.getBigDecimal(key)
     }
 
     fun getArray(key: String): List<JsonObject> {
