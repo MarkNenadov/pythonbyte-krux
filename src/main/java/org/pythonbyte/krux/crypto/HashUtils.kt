@@ -1,17 +1,25 @@
 package org.pythonbyte.krux.crypto
 
 import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 
-class HashUtils {
-    companion object {
-        fun sha1(value: String) : String {
-            return getSha1Digest(value).joinToString("") {
-                String.format("%02x", it)
-            }
-        }
+object HashUtils {
+    private const val HASH_ALGORITHM = "SHA-1"
 
-        private fun getSha1Digest(value: String): ByteArray {
-            return MessageDigest.getInstance("SHA-1").digest( value.toByteArray())
+    fun sha1(value: String): String {
+        return try {
+            getSha1Digest(value).toHexString()
+        } catch (e: NoSuchAlgorithmException) {
+            throw RuntimeException("Error creating SHA-1 Digest", e)
         }
+    }
+
+    private fun getSha1Digest(value: String): ByteArray {
+        val messageDigest = MessageDigest.getInstance(HASH_ALGORITHM)
+        return messageDigest.digest(value.toByteArray())
+    }
+
+    private fun ByteArray.toHexString(): String {
+        return joinToString("") { "%02x".format(it) }
     }
 }

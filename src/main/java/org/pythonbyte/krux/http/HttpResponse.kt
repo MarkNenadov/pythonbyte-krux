@@ -18,6 +18,7 @@ class HttpResponse(private val response: Response) {
     }
 
     fun getJsonObject(): JsonObject {
-        return JsonObject( JSONObject( response.body().string().trim() ))
+        val responseBody = response.body().string().trim()
+        return JsonObject( JSONObject( responseBody ))
     }
 }
