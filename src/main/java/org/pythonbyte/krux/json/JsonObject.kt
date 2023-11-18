@@ -4,8 +4,9 @@ import org.json.JSONObject
 import java.math.BigDecimal
 
 class JsonObject(val wrappedJSONObject: JSONObject) {
+    constructor(jsonString: String) : this(JSONObject(jsonString))
     fun getString(key: String): String {
-        if ( isNull( key ) ) {
+        if (isNull(key)) {
             return ""
         }
         return wrappedJSONObject.getString(key)
@@ -28,13 +29,12 @@ class JsonObject(val wrappedJSONObject: JSONObject) {
     }
 
     fun getStringArray(key: String): List<String> {
-        if ( hasKey(key)) {
+        if (hasKey(key)) {
             return wrappedJSONObject.getJSONArray(key).map { it.toString() }
         }
 
         return listOf()
     }
-
 
     fun isNull(key: String): Boolean {
         return wrappedJSONObject.isNull(key)
