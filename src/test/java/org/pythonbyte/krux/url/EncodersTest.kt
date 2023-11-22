@@ -15,7 +15,7 @@ class EncodersTest {
     @Test
     @SuppressWarnings("unused")
     fun testMapToUrlParameterStringWhenEmpty() {
-        val fruitMap = mapOf<String,String>()
+        val fruitMap = mapOf<String, String>()
         assertEquals("", mapToUrlParameterString(fruitMap))
     }
 
@@ -23,7 +23,7 @@ class EncodersTest {
     @SuppressWarnings("unused")
     fun testMapToUrlParameterStringWithSingleEntry() {
         val fruitMap = mapOf(
-                "apple" to "yum"
+            "apple" to "yum",
         )
         assertEquals("apple=yum", mapToUrlParameterString(fruitMap))
     }
@@ -32,10 +32,10 @@ class EncodersTest {
     @SuppressWarnings("unused")
     fun testMapToUrlParameterStringWithMultipleEntries() {
         val fruitMap = mapOf(
-                "apple" to "yum",
-                "orange" to "ok",
-                "clementine" to "wow"
+            "apple" to "yum",
+            "orange" to "ok",
+            "clementine" to "wow",
         )
-        Assertions.assertEquals("apple=yum&orange=ok&clementine=wow", mapToUrlParameterString(fruitMap))
+        assertEquals("apple=yum&orange=ok&clementine=wow", mapToUrlParameterString(fruitMap))
     }
 }
