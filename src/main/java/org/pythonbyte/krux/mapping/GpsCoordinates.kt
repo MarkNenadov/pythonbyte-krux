@@ -1,8 +1,8 @@
 package org.pythonbyte.krux.mapping
 
 class GpsCoordinates(longitudeLatitude: String?) {
-    var longitude : Float
-    var latitude : Float
+    var longitude: Float
+    var latitude: Float
 
     init {
         val cleanedValue = cleanSpaces(longitudeLatitude!!)
@@ -18,22 +18,22 @@ class GpsCoordinates(longitudeLatitude: String?) {
                     }
                     else -> {
                         throw GpsCoordinateFormattingException(
-                            "Value [$longitudeLatitude] doesn't represent valid GPS coordinates. too many commas."
+                            "Value [$longitudeLatitude] doesn't represent valid GPS coordinates. too many commas.",
                         )
                     }
                 }
             }
             else -> {
                 throw GpsCoordinateFormattingException(
-                    "Value [$longitudeLatitude] doesn't represent valid GPS coordinates. ',' is missing"
+                    "Value [$longitudeLatitude] doesn't represent valid GPS coordinates. ',' is missing",
                 )
             }
         }
     }
 
-    override fun toString() ="$longitude,$latitude"
+    override fun toString() = "$longitude,$latitude"
 
     private fun cleanSpaces(value: String): String {
-        return value.replace( " ", "")
+        return value.replace(" ", "")
     }
 }
