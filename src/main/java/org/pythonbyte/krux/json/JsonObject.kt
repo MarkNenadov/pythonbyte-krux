@@ -5,6 +5,7 @@ import java.math.BigDecimal
 
 class JsonObject(val wrappedJSONObject: JSONObject) {
     constructor(jsonString: String) : this(JSONObject(jsonString))
+
     fun getString(key: String): String {
         if (isNull(key)) {
             return ""
