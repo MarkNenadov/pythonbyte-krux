@@ -1,3 +1,5 @@
+package org.pythonbyte.krux.conversions
+
 import java.io.ByteArrayOutputStream
 import java.nio.ByteBuffer
 import java.util.zip.GZIPOutputStream
