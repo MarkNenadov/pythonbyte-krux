@@ -1,7 +1,7 @@
 import java.io.ByteArrayOutputStream
 import java.nio.ByteBuffer
-import java.util.*
 import java.util.zip.GZIPOutputStream
+import kotlin.io.encoding.Base64
 
 fun ByteBuffer.asString(): String {
     val bytes = ByteArray(this.remaining())
@@ -19,7 +19,8 @@ fun String.gzip(): String {
     return String(byteArrayOutputStream.toByteArray())
 }
 
+@kotlin.io.encoding.ExperimentalEncodingApi
 fun String.base64(): String {
     val byteArray = this.toByteArray()
-    return Base64.getEncoder().encodeToString(byteArray)
+    return Base64.encode(byteArray)
 }
