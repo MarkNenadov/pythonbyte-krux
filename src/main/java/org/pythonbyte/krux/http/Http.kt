@@ -29,6 +29,7 @@ fun buildGetRequest(
 
 fun createPostBody(bodyMap: Map<String, Any>): RequestBody {
     val jsonContent = JsonObject(JSONObject(bodyMap)).toString()
+    val mediaType = MediaType.parse("application/json; charset=utf-8")
 
-    return RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jsonContent)
+    return RequestBody.create(mediaType, jsonContent)
 }

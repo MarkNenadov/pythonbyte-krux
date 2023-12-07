@@ -13,17 +13,15 @@ class JsonObject(val wrappedJSONObject: JSONObject) {
         return wrappedJSONObject.getString(key)
     }
 
-    fun getInt(key: String): Int {
-        return wrappedJSONObject.getInt(key)
-    }
+    fun getInt(key: String): Int = wrappedJSONObject.getInt(key)
 
-    fun getBigDecimal(key: String): BigDecimal {
-        return wrappedJSONObject.getBigDecimal(key)
-    }
+    fun getBigDecimal(key: String): BigDecimal = wrappedJSONObject.getBigDecimal(key)
 
     fun getArray(key: String): List<JsonObject> {
         return if (hasKey(key)) {
-            wrappedJSONObject.getJSONArray(key).map { JsonObject(it as JSONObject) }
+            wrappedJSONObject.getJSONArray(key).map {
+                JsonObject(it as JSONObject)
+            }
         } else {
             emptyList()
         }
@@ -37,27 +35,15 @@ class JsonObject(val wrappedJSONObject: JSONObject) {
         return listOf()
     }
 
-    fun isNull(key: String): Boolean {
-        return wrappedJSONObject.isNull(key)
-    }
+    fun isNull(key: String): Boolean = wrappedJSONObject.isNull(key)
 
-    fun getObject(key: String): JsonObject {
-        return JsonObject(wrappedJSONObject.getJSONObject(key))
-    }
+    fun getObject(key: String): JsonObject = JsonObject(wrappedJSONObject.getJSONObject(key))
 
-    fun hasKey(key: String): Boolean {
-        return wrappedJSONObject.has(key)
-    }
+    fun hasKey(key: String): Boolean = wrappedJSONObject.has(key)
 
-    override fun toString(): String {
-        return wrappedJSONObject.toString()
-    }
+    override fun toString(): String = wrappedJSONObject.toString()
 
-    fun getBoolean(key: String): Boolean {
-        return wrappedJSONObject.getBoolean(key)
-    }
+    fun getBoolean(key: String): Boolean = wrappedJSONObject.getBoolean(key)
 
-    fun getKeys(): List<String> {
-        return wrappedJSONObject.keys().asSequence().toList()
-    }
+    fun getKeys(): List<String> = wrappedJSONObject.keys().asSequence().toList()
 }
