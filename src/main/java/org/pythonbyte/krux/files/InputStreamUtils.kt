@@ -9,7 +9,7 @@ fun resourceToInputStream(fileName: String): InputStream {
         ?: throw Exception("Can't load $fileName")
 }
 
-fun InputStream.getAsString() {
+fun InputStream.getAsString(): String {
     return BufferedReader(InputStreamReader(this)).useLines { lines ->
         lines.joinToString("\n")
     }
