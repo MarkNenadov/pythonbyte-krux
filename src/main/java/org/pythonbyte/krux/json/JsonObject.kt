@@ -29,7 +29,9 @@ class JsonObject(val wrappedJSONObject: JSONObject) {
 
     fun getStringArray(key: String): List<String> {
         if (hasKey(key)) {
-            return wrappedJSONObject.getJSONArray(key).map { it.toString() }
+            return wrappedJSONObject.getJSONArray(key).map {
+                it.toString()
+            }
         }
 
         return listOf()

@@ -8,7 +8,7 @@ import org.pythonbyte.krux.crypto.HashUtils.sha1
 class HashUtilsTest {
     @Test
     fun testSha1() {
-        val result = sha1("Mark")
+        val result = "Mark".sha1()
         assertNotNull(result)
         assertNotEquals("", result)
     }

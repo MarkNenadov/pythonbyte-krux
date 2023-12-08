@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test
 class EncodersTest {
     @Test
     fun testUtf8UrlValue() {
-        assertEquals("Joe+Smith", utf8UrlValue("Joe Smith"))
-        assertEquals("Joe%3DSmith", utf8UrlValue("Joe=Smith"))
+        assertEquals("Joe+Smith", "Joe Smith".utf8UrlValue())
+        assertEquals("Joe%3DSmith", "Joe=Smith".utf8UrlValue())
     }
 
     @Test

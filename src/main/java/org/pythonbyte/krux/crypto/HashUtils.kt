@@ -6,9 +6,9 @@ import java.security.NoSuchAlgorithmException
 object HashUtils {
     private const val HASH_ALGORITHM = "SHA-1"
 
-    fun sha1(value: String): String {
+    fun String.sha1(): String {
         return try {
-            getSha1Digest(value).toHexString()
+            getSha1Digest(this).toHexString()
         } catch (e: NoSuchAlgorithmException) {
             throw RuntimeException("Error creating SHA-1 Digest", e)
         }
