@@ -4,6 +4,7 @@ Core library for Kotlin development.
 ### Recent Releases ###
 
 * v1.4 - [https://github.com/MarkNenadov/pythonbyte-krux/releases/download/v1.4/pythonbyte-krux.jar] - December 7, 2023
+* v1.5 - [https://github.com/MarkNenadov/pythonbyte-krux/releases/download/v1.5/pythonbyte-krux.jar] - December 7, 2023
 
 Note: v1.4 using Kotlin 2.0.0-Beta1.
 
@@ -23,8 +24,9 @@ crypto
   * String.sha1 (extension function)
 
 files
-* FileUtils (file)
+* InputStreamUtils (file)
   * resourceToInputStream (function)
+  * InputStream.asString (class extension)
 
 ByteBufferExtension
 * ByteBuffer.toString (class extension)
