@@ -8,7 +8,7 @@ class ConversionUtilsTest {
     @OptIn(ExperimentalEncodingApi::class)
     @Test
     fun testGzipAndBase64() {
-        val expectedBase64 = "H++/vQgAAAAAAADvv73vv71NLO+/vQYAT11G77+9BAAAAA=="
+        val expectedBase64 = "H8KLCAAAAAAAAMO/w7NNLMOKBgBPXUbDhgQAAAA="
         assertEquals(
             expectedBase64,
             "Mark".gzip().base64(),
