@@ -19,6 +19,13 @@ properties
 mapping
 * GpsCoordinates (class)
 
+conversions
+* ConversionUtils (file)
+  * ByteBuffer.asString (extension function)
+  * String.gzip (extension function)
+  * String gunzip (extension function)
+  * String.base64 (extension function)
+
 crypto
 * HashUtils (file)
   * String.sha1 (extension function)
