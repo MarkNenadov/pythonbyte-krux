@@ -14,3 +14,11 @@ fun InputStream.getAsString(): String {
         lines.joinToString("\n")
     }
 }
+
+fun BufferedReader.readSplit(regex: java.util.regex.Pattern): List<String> {
+    return readLine().split(regex)
+}
+
+fun BufferedReader.readSplits(regex: java.util.regex.Pattern): List<List<String>> {
+    return readLines().map { it.split(regex) }
+}
