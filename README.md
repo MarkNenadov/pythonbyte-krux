@@ -6,8 +6,9 @@ Core library for Kotlin development.
 * [v1.6](https://github.com/MarkNenadov/pythonbyte-krux/releases/download/v1.6/pythonbyte-krux.jar) - December 16, 2023
 * [v1.7](https://github.com/MarkNenadov/pythonbyte-krux/releases/download/v1.7/pythonbyte-krux.jar) - January 16, 2024
 * [v1.8](https://github.com/MarkNenadov/pythonbyte-krux/releases/download/v1.8/pythonbyte-krux.jar) - January 16, 2024
+* [v1.9](https://github.com/MarkNenadov/pythonbyte-krux/releases/download/v1.9/pythonbyte-krux.jar) - March 23, 2024
 
-Note: v1.5 is using Kotlin 2.0 Beta 1 and 1.6-1.7 is using Kotlin 2.0 Beta 2
+Note: v1.5 is using Kotlin 2.0 Beta 1 and 1.6-1.9 is using Kotlin 2.0 Beta 2
 
 ### Key Classes/Files
 
@@ -30,6 +31,7 @@ Note: v1.5 is using Kotlin 2.0 Beta 1 and 1.6-1.7 is using Kotlin 2.0 Beta 2
 **crypto:**
 - `HashUtils`: A file containing hash utility functions.
   - `String.sha1`: An extension function for SHA-1 hashing.
+  - `String.sha256`: An extension function for SHA-256 hashing.
 
 **files:**
 - `InputStreamUtils`: A file with utility functions for handling InputStream.

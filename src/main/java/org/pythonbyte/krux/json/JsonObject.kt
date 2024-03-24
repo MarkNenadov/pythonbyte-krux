@@ -7,10 +7,11 @@ class JsonObject(val wrappedJSONObject: JSONObject) {
     constructor(jsonString: String) : this(JSONObject(jsonString))
 
     fun getString(key: String): String {
-        if (isNull(key)) {
-            return ""
+        return if (isNull(key)) {
+            ""
+        } else {
+            wrappedJSONObject.getString(key)
         }
-        return wrappedJSONObject.getString(key)
     }
 
     fun getInt(key: String): Int = wrappedJSONObject.getInt(key)
@@ -28,13 +29,13 @@ class JsonObject(val wrappedJSONObject: JSONObject) {
     }
 
     fun getStringArray(key: String): List<String> {
-        if (hasKey(key)) {
-            return wrappedJSONObject.getJSONArray(key).map {
+        return if (hasKey(key)) {
+            wrappedJSONObject.getJSONArray(key).map {
                 it.toString()
             }
+        } else {
+            return listOf()
         }
-
-        return listOf()
     }
 
     fun isNull(key: String): Boolean = wrappedJSONObject.isNull(key)

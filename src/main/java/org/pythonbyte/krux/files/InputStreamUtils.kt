@@ -15,10 +15,10 @@ fun InputStream.getAsString(): String {
     }
 }
 
-fun BufferedReader.readSplit(regex: java.util.regex.Pattern): List<String> {
-    return readLine().split(regex)
+fun BufferedReader.readSplit(splitValue: String): List<String> {
+    return readLine().split(splitValue)
 }
 
-fun BufferedReader.readSplits(regex: java.util.regex.Pattern): List<List<String>> {
-    return readLines().map { it.split(regex) }
+fun BufferedReader.readSplits(splitValue: String): List<List<String>> {
+    return readLines().map { it.split(splitValue) }
 }
