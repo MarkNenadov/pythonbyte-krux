@@ -1,9 +1,6 @@
 package org.pythonbyxte.krux.crypto
 
-import org.pythonbyxte.krux.crypto.HashUtils.sha1
-import org.pythonbyxte.krux.crypto.HashUtils.toHexString
 import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
 
 object HashUtils {
     private const val SHA1_HASH_ALGORITHM = "SHA-1"
@@ -15,13 +12,9 @@ object HashUtils {
 
     fun String.hash(messageDigest: MessageDigest): String = messageDigest.digest(this.toByteArray()).toHexString()
 
-    private fun getDigest(algorithm: String): MessageDigest {
-        return try {
-            MessageDigest.getInstance(algorithm)
-        } catch (e: NoSuchAlgorithmException) {
-            throw RuntimeException("Error creating $algorithm Digest", e)
-        }
-    }
+    fun String.hash(algorithm: String): String = getDigest(algorithm).digest(this.toByteArray()).toHexString()
+
+    private fun getDigest(algorithm: String): MessageDigest = MessageDigest.getInstance(algorithm)
 
     private fun ByteArray.toHexString(): String {
         return joinToString("") { "%02x".format(it) }
