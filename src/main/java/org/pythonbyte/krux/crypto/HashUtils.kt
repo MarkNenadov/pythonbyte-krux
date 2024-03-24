@@ -11,11 +11,14 @@ object HashUtils {
 
     fun String.sha256(): String = getDigest(this, SHA256_HASH_ALGORITHM).toHexString()
 
-    private fun getDigest(value: String, algorithm: String): ByteArray {
+    private fun getDigest(
+        value: String,
+        algorithm: String,
+    ): ByteArray {
         return try {
             val messageDigest = MessageDigest.getInstance(algorithm)
             messageDigest.digest(value.toByteArray())
-        }  catch (e: NoSuchAlgorithmException) {
+        } catch (e: NoSuchAlgorithmException) {
             throw RuntimeException("Error creating $algorithm Digest", e)
         }
     }
