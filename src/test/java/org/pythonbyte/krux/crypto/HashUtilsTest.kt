@@ -1,6 +1,8 @@
 package org.pythonbyte.krux.crypto
 
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertNotEquals
+import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.Test
 import org.pythonbyxte.krux.crypto.HashUtils.hash
 import org.pythonbyxte.krux.crypto.HashUtils.sha1
@@ -29,7 +31,6 @@ class HashUtilsTest {
         assertNotNull(result)
         assertNotEquals("", result)
     }
-
 
     @Test
     fun `hash with string algorithm happy flow`() {
