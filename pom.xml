@@ -6,7 +6,7 @@
 
     <groupId>org.pythonbyte.krux</groupId>
     <artifactId>pythonbyte-krux</artifactId>
-    <version>2.0.1</version>
+    <version>2.2</version>
     <packaging>jar</packaging>
 
     <name>pythonbyte-krux</name>
@@ -30,7 +30,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.11.0-M1</version>
+            <version>5.11.0-RC1</version>
             <scope>test</scope>
         </dependency>
 
