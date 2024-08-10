@@ -15,6 +15,8 @@ class JsonObject(
             wrappedJSONObject.getString(key)
         }
 
+    fun getStrings(vararg keys: String): List<String> = keys.map { getString(it) }
+
     fun getInt(key: String): Int = wrappedJSONObject.getInt(key)
 
     fun getBigDecimal(key: String): BigDecimal = wrappedJSONObject.getBigDecimal(key)
