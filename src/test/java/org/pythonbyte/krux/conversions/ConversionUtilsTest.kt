@@ -2,6 +2,7 @@ package org.pythonbyte.krux.conversions
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import java.nio.ByteBuffer
 import kotlin.io.encoding.ExperimentalEncodingApi
 
 class ConversionUtilsTest {
@@ -27,5 +28,15 @@ class ConversionUtilsTest {
             value.gzip().base64(),
         )
         assertEquals(value, value.gzip().gunzip())
+    }
+
+    @Test
+    fun testByteBufferAsString() {
+        val originalString = "Hello, Kotlin!"
+        val byteBuffer = ByteBuffer.wrap(originalString.toByteArray(Charsets.UTF_8))
+
+        val result = byteBuffer.asString()
+
+        assertEquals(originalString, result)
     }
 }
