@@ -9,30 +9,24 @@ import java.util.zip.GZIPInputStream
 import java.util.zip.GZIPOutputStream
 import kotlin.io.encoding.Base64
 
-fun ByteBuffer.asString(): String {
-    val bytes = ByteArray(this.remaining())
-    this.get(bytes)
-    return String(bytes, Charsets.UTF_8)
-}
+fun ByteBuffer.asString(): String = Charsets.UTF_8.decode(this).toString()
 
-fun String.gzip(): String {
-    val byteArrayOutputStream = ByteArrayOutputStream()
+fun String.gzip(): String =
+    ByteArrayOutputStream().use { byteArrayOutputStream ->
+        GZIPOutputStream(byteArrayOutputStream).use {
+            it.write(this.toByteArray(Charsets.UTF_8))
+        }
 
-    GZIPOutputStream(byteArrayOutputStream).use {
-        it.write(this.toByteArray(Charsets.UTF_8))
+        byteArrayOutputStream.toByteArray().toString(Charsets.ISO_8859_1)
     }
 
-    return byteArrayOutputStream.toByteArray().toString(Charsets.ISO_8859_1)
-}
-
 fun String.gunzip(): String {
-    val compressedData = this.toByteArray(Charsets.ISO_8859_1)
-    val inputStream = ByteArrayInputStream(compressedData)
-    val reader = BufferedReader(InputStreamReader(GZIPInputStream(inputStream), Charsets.UTF_8))
+    val inputStream = ByteArrayInputStream(this.toByteArray(Charsets.ISO_8859_1))
 
     val result = StringBuilder()
     var line: String?
 
+    val reader = BufferedReader(InputStreamReader(GZIPInputStream(inputStream), Charsets.UTF_8))
     reader.use {
         while (reader.readLine().also { line = it } != null) {
             result.append(line)
@@ -43,7 +37,4 @@ fun String.gunzip(): String {
 }
 
 @kotlin.io.encoding.ExperimentalEncodingApi
-fun String.base64(): String {
-    val byteArray = this.toByteArray()
-    return Base64.encode(byteArray)
-}
+fun String.base64(): String = Base64.encode(this.toByteArray())
