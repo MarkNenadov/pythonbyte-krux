@@ -6,7 +6,7 @@
 
     <groupId>org.pythonbyte.krux</groupId>
     <artifactId>pythonbyte-krux</artifactId>
-    <version>2.5</version>
+    <version>3.0</version>
     <packaging>jar</packaging>
 
     <name>pythonbyte-krux</name>
@@ -94,7 +94,7 @@
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
                     <finalName>${project.name}</finalName>
-                    <appendAssemblyId>false</appendAssemblyId>
+                    <appendAssemblyId>true</appendAssemblyId>
                 </configuration>
             </plugin>
             <plugin>

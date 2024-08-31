@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Assertions.assertNotEquals
 import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.Test
-import org.pythonbyxte.krux.crypto.HashUtils.hash
-import org.pythonbyxte.krux.crypto.HashUtils.sha1
-import org.pythonbyxte.krux.crypto.HashUtils.sha256
+import org.pythonbyte.krux.crypto.HashUtils.hash
+import org.pythonbyte.krux.crypto.HashUtils.sha1
+import org.pythonbyte.krux.crypto.HashUtils.sha256
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 

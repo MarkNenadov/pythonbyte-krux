@@ -1,4 +1,4 @@
-package org.pythonbyxte.krux.crypto
+package org.pythonbyte.krux.crypto
 
 import java.security.MessageDigest
 
@@ -16,7 +16,5 @@ object HashUtils {
 
     private fun getDigest(algorithm: String): MessageDigest = MessageDigest.getInstance(algorithm)
 
-    private fun ByteArray.toHexString(): String {
-        return joinToString("") { "%02x".format(it) }
-    }
+    private fun ByteArray.toHexString(): String = joinToString("") { "%02x".format(it) }
 }
