@@ -1,4 +1,4 @@
-package org.pythonbyte.krux.url
+package org.pythonbyte.krux.timer
 
 class KruxTimer {
     private var startTime: Long = 0L
