@@ -5,7 +5,6 @@ import com.squareup.okhttp.MediaType
 import com.squareup.okhttp.OkHttpClient
 import com.squareup.okhttp.Request
 import com.squareup.okhttp.RequestBody
-import org.json.JSONObject
 import org.pythonbyte.krux.json.JsonObject
 
 fun sendRequest(request: Request?): HttpResponse = HttpResponse(OkHttpClient().newCall(request).execute())
@@ -24,7 +23,7 @@ fun buildGetRequest(
 private fun buildUrl(url: String): Request.Builder = Request.Builder().url(url)
 
 fun createPostBody(bodyMap: Map<String, Any>): RequestBody {
-    val jsonContent = JsonObject(JSONObject(bodyMap)).toString()
+    val jsonContent = JsonObject(bodyMap).toString()
     val mediaType = MediaType.parse("application/json; charset=utf-8")
 
     return RequestBody.create(mediaType, jsonContent)

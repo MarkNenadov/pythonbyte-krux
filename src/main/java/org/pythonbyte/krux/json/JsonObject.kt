@@ -7,6 +7,7 @@ class JsonObject(
     val wrappedJSONObject: JSONObject,
 ) {
     constructor(jsonString: String) : this(JSONObject(jsonString))
+    constructor(map: Map<String, Any>) : this(JSONObject(map))
 
     fun getString(key: String): String =
         if (isNull(key)) {
