@@ -22,8 +22,10 @@ class HttpResponse(
 
     fun getJsonArray(): List<JsonObject> {
         val responseBody = getBody().string().trim()
-        val jsonObjects = JSONArray(responseBody).toList()
-        return jsonObjects.map { JsonObject(it as JSONObject) }
+        val jsonArray = JSONArray(responseBody)
+        return (0 until jsonArray.length()).map {
+            JsonObject(jsonArray.getJSONObject(it))
+        }
     }
 
     private fun getBody(): ResponseBody = response.body()
