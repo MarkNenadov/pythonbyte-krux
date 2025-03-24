@@ -1,7 +1,6 @@
 package org.pythonbyte.krux.http
 
 import okhttp3.Headers
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
