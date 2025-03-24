@@ -29,5 +29,5 @@ class HttpResponse(
         return JsonArray(responseBody).getAsList()
     }
 
-    private fun getBody(): ResponseBody? = response.body
+    fun getBody(): ResponseBody? = response.body
 }
