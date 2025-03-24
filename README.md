@@ -6,6 +6,7 @@ Core library for Kotlin development.
 * [v3.0](https://github.com/MarkNenadov/pythonbyte-krux/releases/download/v3.0/pythonbyte-krux-jar-with-dependencies.jar) - Aug 31, 2024
 * [v3.1](https://github.com/MarkNenadov/pythonbyte-krux/releases/download/v3.1/pythonbyte-krux-jar-with-dependencies.jar) - Oct 14, 2024
 * [v3.2](https://github.com/MarkNenadov/pythonbyte-krux/releases/download/v3.2/pythonbyte-krux-jar-with-dependencies.jar) - Oct 14, 2024
+* [v3.3](https://github.com/MarkNenadov/pythonbyte-krux/releases/download/v3.3/pythonbyte-krux-jar-with-dependencies.jar) - Mar 23, 2025
 
 ### Key Classes/Files
 
