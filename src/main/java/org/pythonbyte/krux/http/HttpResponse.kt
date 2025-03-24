@@ -1,7 +1,7 @@
 package org.pythonbyte.krux.http
 
-import com.squareup.okhttp.Response
-import com.squareup.okhttp.ResponseBody
+import okhttp3.Response
+import okhttp3.ResponseBody
 import org.json.JSONObject
 import org.pythonbyte.krux.json.JsonArray
 import org.pythonbyte.krux.json.JsonObject
@@ -9,7 +9,11 @@ import org.pythonbyte.krux.json.JsonObject
 class HttpResponse(
     private val response: Response,
 ) {
-    fun isOk(): Boolean = response.code() == 200
+    fun code(): Int = response.code()
+
+    fun message(): String = response.message()
+
+    fun isOk(): Boolean = code() == 200
 
     fun getBytes(): ByteArray = getBody().bytes()
 

@@ -1,10 +1,6 @@
 package org.pythonbyte.krux.http
 
-import com.squareup.okhttp.Headers
-import com.squareup.okhttp.MediaType
-import com.squareup.okhttp.OkHttpClient
-import com.squareup.okhttp.Request
-import com.squareup.okhttp.RequestBody
+import okhttp3.*
 import org.pythonbyte.krux.json.JsonObject
 
 fun sendRequest(request: Request?): HttpResponse = HttpResponse(OkHttpClient().newCall(request).execute())
