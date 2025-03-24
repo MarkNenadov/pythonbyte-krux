@@ -8,20 +8,22 @@ import org.pythonbyte.krux.timer.KruxTimer
 class KruxTimerTest {
     @Test
     fun `no time`() {
-        val timer = KruxTimer()
-        assertEquals(0, timer.result)
+        with(KruxTimer()) {
+            assertEquals(0, result)
+        }
     }
 
     @Test
     fun `some time`() {
-        val timer = KruxTimer()
-        timer.start()
-        val number = 0..1000000
-        for (x in number) {
-            val y = x * 1000
+        with(KruxTimer()) {
+            start()
+            val number = 0..1000000
+            for (x in number) {
+                val y = x * 1000
+            }
+            stop()
+            assertTrue(result > 0)
+            assertTrue(result < 20)
         }
-        timer.stop()
-        assertTrue(timer.result > 0)
-        assertTrue(timer.result < 20)
     }
 }
