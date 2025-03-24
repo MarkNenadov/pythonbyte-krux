@@ -2,18 +2,19 @@ package org.pythonbyte.krux.http
 
 import okhttp3.Headers
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody
 import org.pythonbyte.krux.json.JsonObject
 
-fun sendRequest(request: Request?): HttpResponse = HttpResponse(OkHttpClient().newCall(request).execute())
+fun sendRequest(request: Request): HttpResponse = HttpResponse(OkHttpClient().newCall(request).execute())
 
 fun buildRequest(
     url: String,
     headers: Headers,
     postBody: RequestBody,
-): Request? = buildUrl(url).headers(headers).post(postBody).build()
+): Request = buildUrl(url).headers(headers).post(postBody).build()
 
 fun buildGetRequest(
     url: String,
@@ -24,7 +25,7 @@ private fun buildUrl(url: String): Request.Builder = Request.Builder().url(url)
 
 fun createPostBody(bodyMap: Map<String, Any>): RequestBody {
     val jsonContent = JsonObject(bodyMap).toString()
-    val mediaType = MediaType.parse("application/json; charset=utf-8")
+    val mediaType = "application/json; charset=utf-8".toMediaTypeOrNull()
 
     return RequestBody.create(mediaType, jsonContent)
 }
