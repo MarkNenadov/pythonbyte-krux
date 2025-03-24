@@ -1,6 +1,5 @@
 package org.pythonbyte.krux.http
 
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 
 object MediaTypes {
