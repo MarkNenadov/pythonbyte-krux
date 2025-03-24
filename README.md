@@ -28,11 +28,13 @@ Core library for Kotlin development.
 
 **http:**
 - `HttpResponse`: A wrapper class for HTTP responses.
-- `http`: A file with HTTP-related functions.
+- `Http`: A file with HTTP-related functions.
   - `buildRequest`: A function for building an HTTP request.
   - `sendRequest`: A function for sending an HTTP request.
   - `buildGetRequest`: A function for building a GET request.
   - `createPostBody`: A function for creating the body of a POST request.
+- `Headers`: A file with Headers-related functions
+  - `buildHeaders`: Build http headers
 
 **json:**
 - `JsonObject`: A class that wraps the `JSONObject` for JSON handling.
