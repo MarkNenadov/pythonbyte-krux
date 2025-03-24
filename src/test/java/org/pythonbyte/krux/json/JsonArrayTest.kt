@@ -11,6 +11,21 @@ class JsonArrayTest {
     }
 
     @Test
+    fun testGetAsListWithEmptyList() {
+        assertEquals(0, JsonArray("{}").getAsList().size)
+        assertEquals(0, JsonArray("[]").getAsList().size)
+    }
+
+    @Test
+    fun testGetAsListWithPopulatedList() {
+        val asList = JsonArray("[{'name':'george'},{'name':'mike'},{'name':'helen'}]").getAsList()
+        assertEquals(3, asList.size)
+        assertEquals("george", asList[0].getString("name"))
+        assertEquals("mike", asList[1].getString("name"))
+        assertEquals("helen", asList[2].getString("name"))
+    }
+
+    @Test
     fun testConstructFromStringNotEmpty() {
         assertEquals(1, JsonArray("[{\"name\": \"Pete\"}]").length())
     }
