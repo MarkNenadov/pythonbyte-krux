@@ -44,4 +44,4 @@ class EmailAddressScrubberTest {
         val expected = "Contact us at [EMAIL REDACTED] or [EMAIL REDACTED]."
         assertEquals(expected, scrubber.scrub(input))
     }
-} 
+}

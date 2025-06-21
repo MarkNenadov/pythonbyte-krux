@@ -1,21 +1,20 @@
-package com.pythonbyte.spring_into_ai.utils.scrubbers
+package org.pythonbyte.krux.privacy
 
-import org.pythonbyte.krux.privacy.PIIScrubber
-
-class PhoneNumberScrubber: PIIScrubber {
+class PhoneNumberScrubber : PIIScrubber {
     override fun scrub(str: String): String {
-        val phoneRegex = Regex(
-            """(?x)
-            (?:
-                # International format
-                (?:\+|00)?\d{1,3}[\s\-.\(]?\d{1,4}[\s\-.\)]?\d{1,4}[\s\-.\)]?\d{1,9} |
-                # US format with area code
-                \(?\d{3}\)?[\s\-\.]?\d{3}[\s\-\.]?\d{4} |
-                # Plain 10 digits
-                \b(?:1?\d{10})\b
+        val phoneRegex =
+            Regex(
+                """(?x)
+                (?:
+                    # International format
+                    (?:\+|00)?\d{1,3}[\s\-.\(]?\d{1,4}[\s\-.\)]?\d{1,4}[\s\-.\)]?\d{1,9} |
+                    # US format with area code
+                    \(?\d{3}\)?[\s\-\.]?\d{3}[\s\-\.]?\d{4} |
+                    # Plain 10 digits
+                    \b(?:1?\d{10})\b
+                )
+                """,
             )
-            """
-        )
 
         return phoneRegex.replace(str) { matchResult ->
             val number = matchResult.value

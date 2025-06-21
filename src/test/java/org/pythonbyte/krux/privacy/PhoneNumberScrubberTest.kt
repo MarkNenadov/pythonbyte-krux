@@ -1,6 +1,5 @@
 package org.pythonbyte.krux.privacy
 
-import com.pythonbyte.spring_into_ai.utils.scrubbers.PhoneNumberScrubber
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

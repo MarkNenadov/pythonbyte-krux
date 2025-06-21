@@ -1,6 +1,5 @@
 package org.pythonbyte.krux.privacy
 
-import com.pythonbyte.spring_into_ai.utils.scrubbers.GovernmentIdScrubber
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
@@ -47,4 +46,4 @@ class GovernmentIdScrubberTest {
         val expected = "My SIN is [SIN REDACTED] and SSN is [SSN REDACTED]."
         assertEquals(expected, scrubber.scrub(input))
     }
-} 
+}
