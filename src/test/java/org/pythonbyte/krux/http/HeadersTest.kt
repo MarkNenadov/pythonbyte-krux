@@ -17,9 +17,9 @@ class HeadersTest {
             buildHeaders(
                 mapOf(
                     "name" to "Mark",
-                    "age" to "88"
-                )
-            )
+                    "age" to "88",
+                ),
+            ),
         ) {
             assertEquals(2, size)
             assertTrue(names().contains("name"))
