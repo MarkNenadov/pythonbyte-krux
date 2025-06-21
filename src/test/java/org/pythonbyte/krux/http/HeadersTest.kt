@@ -13,12 +13,14 @@ class HeadersTest {
 
     @Test
     fun testBuildHeadersWhenNotEmptyHeaders() {
-        with(buildHeaders(
-            mapOf(
-                "name" to "Mark",
-                "age" to "88"
+        with(
+            buildHeaders(
+                mapOf(
+                    "name" to "Mark",
+                    "age" to "88"
+                )
             )
-        )) {
+        ) {
             assertEquals(2, size)
             assertTrue(names().contains("name"))
             assertTrue(names().contains("age"))
