@@ -2,7 +2,7 @@
   "permissions": {
     "deny": [
       "Read(.idea)",
-      "target"
+      "Read(target)"
     ]
   }
 }
