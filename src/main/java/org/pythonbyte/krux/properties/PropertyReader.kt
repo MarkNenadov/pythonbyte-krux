@@ -7,6 +7,9 @@ class PropertyReader(propertiesFileName: String) {
     private val properties = Properties()
 
     init {
+        require(propertiesFileName.isNotEmpty()) {
+            "Unable to initialize property reader with empty property file name"
+        }
         try {
             val propertiesFile = PropertyReader::class.java.getResourceAsStream(propertiesFileName)
 
@@ -17,6 +20,9 @@ class PropertyReader(propertiesFileName: String) {
     }
 
     fun get(propertyName: String): String {
+        require(propertyName.isNotEmpty()) {
+            "Unable to get empty property name"
+        }
         return properties.getProperty(propertyName)
     }
 }
