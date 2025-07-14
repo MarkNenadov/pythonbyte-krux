@@ -11,16 +11,24 @@ import kotlin.io.encoding.Base64
 
 fun ByteBuffer.asString(): String = Charsets.UTF_8.decode(this).toString()
 
-fun String.gzip(): String =
-    ByteArrayOutputStream().use { byteArrayOutputStream ->
+fun String.gzip(): String {
+    require(isNotEmpty()) {
+        "Pointless to gzip an empty string"
+    }
+    return ByteArrayOutputStream().use { byteArrayOutputStream ->
         GZIPOutputStream(byteArrayOutputStream).use {
             it.write(this.toByteArray(Charsets.UTF_8))
         }
 
         byteArrayOutputStream.toByteArray().toString(Charsets.ISO_8859_1)
     }
+}
 
 fun String.gunzip(): String {
+    require(isNotEmpty()) {
+        "Pointless to gzip an empty string"
+    }
+
     val inputStream = ByteArrayInputStream(this.toByteArray(Charsets.ISO_8859_1))
 
     val result = StringBuilder()
@@ -37,4 +45,10 @@ fun String.gunzip(): String {
 }
 
 @kotlin.io.encoding.ExperimentalEncodingApi
-fun String.base64(): String = Base64.encode(this.toByteArray())
+fun String.base64(): String {
+    require(isNotEmpty()) {
+        "Pointless to base64 an empty string"
+    }
+
+    return Base64.encode(this.toByteArray())
+}
