@@ -8,6 +8,9 @@ fun String.utf8UrlValue(): String {
 
 fun mapToUrlParameterString(parameterMap: Map<String, String>): String {
     return parameterMap.keys.joinToString(separator = "&") { parameterName ->
+        require(parameterName.isNotEmpty()) {
+            "Emtpy map key (parameter name) not supported in mapToUrlParameterString"
+        }
         parameterName + "=" + parameterMap[parameterName]
     }
 }
